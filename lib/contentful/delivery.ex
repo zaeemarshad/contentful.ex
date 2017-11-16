@@ -4,5 +4,11 @@ defmodule Contentful.Delivery do
   This module contains the functions to interact with Contentful's read-only
   Content Delivery API and requires the delivery access token.
   """
-  use Contentful.Base, endpoint: "cdn.contentful.com"
+  @sandbox Application.get_env(:contentful, :sandbox, false)
+  if !@sandbox do
+    use Contentful.Base, endpoint: "cdn.contentful.com"
+  else
+    use Contentful.Sandbox
+  end
+
 end
