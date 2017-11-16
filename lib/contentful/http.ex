@@ -6,7 +6,10 @@ defmodule Contentful.Http do
   def process_url(url), do: "#{@protocol}://#{url}"
 
   def process_response_body(body) do
-    Poison.decode(body)
+    case Poison.decode(body) do
+      {:error, _} -> :error
+      x -> x
+    end
   end
 
   def process_request_headers(headers) do

@@ -19,6 +19,10 @@ defmodule Contentful.DeliveryTest do
       assert {:ok, entries} = Delivery.entries(@space_id, @access_token)
       assert is_list(entries)
     end
+
+    use_cassette "entries-bad" do
+      assert :error = Delivery.entries(@space_id, @access_token)
+    end
   end
 
   @tag timeout: 10000

@@ -22,8 +22,7 @@ defmodule Contentful.Base do
                ) do
           case params["resolve_includes"] do
             x when x in [false, nil] ->
-              {:ok, body["items"]}
-
+              Map.fetch(body, "items")
             true ->
               new_items =
                 with {:ok, items} <- Map.fetch(body, "items"),

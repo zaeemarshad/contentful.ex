@@ -1,0 +1,44 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "User-Agent": "Contentful-Elixir",
+        "accept": "application/json",
+        "Authorization": "Bearer ACCESS_TOKEN"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://cdn.contentful.com/spaces/z3aswf9egfi8/entries"
+    },
+    "response": {
+      "body": "{\n  \"sys\": {\n    \"type\": \"Error\",\n    \"id\": \"AccessTokenInvalid\"\n  },\n  \"message\": \"The access token you sent could not be found or is invalid.\",\n  \"requestId\": \"1273ca52234c99551308331fa707b8f8\"\n}\n",
+      "headers": {
+        "Access-Control-Allow-Headers": "Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature",
+        "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Expose-Headers": "Etag",
+        "Access-Control-Max-Age": "86400",
+        "Cache-Control": "max-age=0",
+        "Content-Type": "application/vnd.contentful.delivery.v1+json",
+        "Server": "Contentful",
+        "X-Content-Type-Options": "nosniff",
+        "X-Contentful-Request-Id": "1273ca52234c99551308331fa707b8f8",
+        "Content-Length": "198",
+        "Accept-Ranges": "bytes",
+        "Date": "Thu, 16 Nov 2017 23:40:44 GMT",
+        "Via": "1.1 varnish",
+        "Age": "0",
+        "Connection": "keep-alive",
+        "X-Served-By": "cache-syd1621-SYD",
+        "X-Cache": "MISS",
+        "X-Cache-Hits": "0",
+        "X-Timer": "S1510875644.488089,VS0,VE248",
+        "Vary": "Accept-Encoding"
+      },
+      "status_code": 401,
+      "type": "ok"
+    }
+  }
+]
