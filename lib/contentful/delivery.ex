@@ -4,14 +4,5 @@ defmodule Contentful.Delivery do
   This module contains the functions to interact with Contentful's read-only
   Content Delivery API and requires the delivery access token.
   """
-
-
-  
-  use Contentful.Functions
-  @behaviour Contentful.Functions
-
-  @endpoint "cdn.contentful.com"
-  @protocol "https"
-
-  def process_url(url), do: "#{@protocol}://#{@endpoint}#{url}"
+  use Contentful.Base, endpoint: "cdn.contentful.com"
 end
