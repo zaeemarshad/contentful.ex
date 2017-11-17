@@ -6,6 +6,12 @@ defmodule Contentful.IncludeResolver do
   the current missing links if they are not part of the includes.
   """
 
+  def resolve_includes(items, includes) do
+    items
+    |> Enum.map(&resolve_include_field(&1, merge_includes(includes)))
+  end
+
+
   def resolve_entry(entries) do
     cond do
       Map.has_key?(entries, "items") ->

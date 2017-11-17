@@ -4,11 +4,10 @@ defmodule Contentful.Preview do
   This module connects to the preview.contentful.com endpoint and requires the preview access token
   """
 
-  use Contentful.Functions
-  @behaviour Contentful.Functions
-
-  @endpoint "preview.contentful.com"
-  @protocol "https"
-
-  def process_url(url), do: "#{@protocol}://#{@endpoint}#{url}"
+  @sandbox Application.get_env(:contentful, :sandbox, false)
+  if !@sandbox do
+    use Contentful.Base, endpoint: "preview.contentful.com"
+  else
+    use Contentful.Sandbox
+  end
 end
